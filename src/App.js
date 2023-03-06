@@ -32,6 +32,7 @@ import Payment from "./Pages/Payment/Payment";
 import Order from "./Pages/Order/Order";
 import Profile from "./Pages/Profile/Profile";
 import NotFound from "./Pages/NotFound/NotFound";
+import Review from "./Pages/Review/Review";
 
 function App() {
   const dispatch = useDispatch();
@@ -63,7 +64,7 @@ function App() {
         <Route path="/new-account/register" element={<Register />}></Route>
 
         <Route path="/*" element={<PrivateRoute />}>
-          {/* <Route path="review/:id" element={<Review />}></Route> */}
+          <Route path="review/:id" element={<Review />}></Route>
           <Route path="account/profile" element={<Profile />}></Route>
           <Route path="checkout" element={<Checkout />}></Route>
           <Route path="payment" element={<Payment />}></Route>

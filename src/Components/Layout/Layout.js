@@ -5,8 +5,10 @@ const Layout = (props) => {
   const { home, children } = props;
   return (
     <div>
-      <Header home={home} />
-      <main className={props.class}>{children}</main>
+      <header className="sticky top-0 z-50">
+        <Header home={home} />
+      </header>
+      <main className={"z-1"}>{children}</main>
       <Footer></Footer>
     </div>
   );

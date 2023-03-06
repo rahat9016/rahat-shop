@@ -11,6 +11,7 @@ import ProductLoadingPage from "../../Components/ProductComponent/ProductLoading
 import NotFoundProduct from "../../Components/ProductComponent/NotFoundProduct/NotFoundProduct";
 import { searchURL } from "../../helpers/searchUrl";
 import { filterProducts } from "../../redux/action/product.action";
+import HomeProductCard from "../../Components/ProductComponent/ProductCard/HomeProductCard";
 const Shop = () => {
   const location = useLocation();
   const dispatch = useDispatch();
@@ -156,7 +157,7 @@ const Shop = () => {
                   {products.length > 0 ? (
                     <div className="px-2 lg:px-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-2">
                       {products.map((product) => (
-                        <ProductCard key={product._id} product={product} />
+                        <HomeProductCard key={product._id} product={product} />
                       ))}
                     </div>
                   ) : (

@@ -9,6 +9,7 @@ import ProductLoadingPage from "../../Components/ProductComponent/ProductLoading
 import { getAllProductsAction } from "../../redux/action/product.action";
 import { useNavigate } from "react-router-dom";
 import { isUserLoggedIn } from "../../redux/action/auth.action";
+import HomeProductCard from "../../Components/ProductComponent/ProductCard/HomeProductCard";
 const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ const Home = () => {
           </div>
           <div>
             {product.loading ? (
-              <div className="px-2 sm:px-10 md:px-8 lg:px-4 xl:px-0 grid grid-cols-2 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+              <div className="px-2 sm:px-10 md:px-8 lg:px-4 xl:px-0 grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                 <ProductLoadingPage />
                 <ProductLoadingPage />
                 <ProductLoadingPage />
@@ -58,9 +59,9 @@ const Home = () => {
             ) : (
               <div>
                 {product.bestSellingProducts.length > 0 ? (
-                  <div className="px-2 sm:px-10 md:px-8 lg:px-4 xl:px-0 grid grid-cols-2 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                  <div className="px-2 sm:px-10 md:px-8 lg:px-4 xl:px-0 grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                     {product.bestSellingProducts.map((product, index) => (
-                      <ProductCard key={product._id} product={product} />
+                      <HomeProductCard key={product._id} product={product} />
                     ))}
                   </div>
                 ) : (
@@ -133,7 +134,7 @@ const Home = () => {
           <div className="">
             <div className="">
               {product.loading ? (
-                <div className="px-2 sm:px-10 md:px-8 lg:px-4 xl:px-0 grid grid-cols-2 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                <div className="px-2 sm:px-10 md:px-8 lg:px-4 xl:px-0 grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                   <ProductLoadingPage />
                   <ProductLoadingPage />
                   <ProductLoadingPage />
@@ -143,9 +144,9 @@ const Home = () => {
               ) : (
                 <div>
                   {product.products.length > 0 ? (
-                    <div className="px-2 sm:px-10 md:px-8 lg:px-4 xl:px-0 grid grid-cols-2 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                    <div className="px-2 sm:px-10 md:px-8 lg:px-4 xl:px-0 grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                       {product.products.slice(0, 10).map((product, index) => (
-                        <ProductCard key={product._id} product={product} />
+                        <HomeProductCard key={product._id} product={product} />
                       ))}
                     </div>
                   ) : (

@@ -4,7 +4,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../../redux/action/cart.action";
-const ProductCard = ({ product }) => {
+const HomeProductCard = ({ product }) => {
   const dispatch = useDispatch();
   const { _id, name, price, productPictures, keyFeatures } = product;
   const productImage = productPictures.map((img) => {
@@ -59,4 +59,4 @@ const ProductCard = ({ product }) => {
   );
 };
 
-export default ProductCard;
+export default HomeProductCard;

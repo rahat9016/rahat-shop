@@ -13,7 +13,7 @@ const MenuSection = ({ home }) => {
       myCategories.push(
         <li
           key={category.title}
-          className="flex  justify-between font-fira font-semibold z-50"
+          className="flex  justify-between font-fira font-semibold z-2"
         >
           {category.parentId ? (
             <Link to={`/shop?${category.title}/${category._id}`}>
@@ -37,7 +37,7 @@ const MenuSection = ({ home }) => {
     <>
       {home ? (
         <div className="homeMenu">
-          <ul>{renderCategory(category)}</ul>
+          <ul className="z-1">{renderCategory(category)}</ul>
         </div>
       ) : (
         <div className="w-full bg-white shadow-md z-50	hidden lg:block">
