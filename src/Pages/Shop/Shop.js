@@ -58,7 +58,7 @@ const Shop = () => {
         <MenuSection />
         <div className="max-w-7xl mx-auto flex gap-4 w-full mt-5">
           <div className="hidden lg:block lg:w-[20%] ">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 z-0">
               <ToggleMenu title={"Price"}>
                 <Slider
                   getAriaLabel={() => "Temperature range"}

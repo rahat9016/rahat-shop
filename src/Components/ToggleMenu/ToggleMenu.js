@@ -7,7 +7,7 @@ const ToggleMenu = (props) => {
   };
   return (
     <div
-      className={`w-full h-fit py-4 px-2 bg-white rounded-md ${
+      className={`w-full h-fit py-4 px-2 bg-white rounded-md z-0 ${
         toggle ? "shadow-sm" : "shadow-md"
       }`}
     >
