@@ -6,7 +6,6 @@ import MenuSection from "../../Components/Menu/MenuSection";
 import TopBar from "../../Components/TopBar/TopBar";
 import Slider from "@mui/material/Slider";
 import ToggleMenu from "../../Components/ToggleMenu/ToggleMenu";
-import ProductCard from "../../Components/ProductComponent/ProductCard/ProductCard";
 import ProductLoadingPage from "../../Components/ProductComponent/ProductLoadingPage/ProductLoadingPage";
 import NotFoundProduct from "../../Components/ProductComponent/NotFoundProduct/NotFoundProduct";
 import { searchURL } from "../../helpers/searchUrl";
@@ -142,7 +141,7 @@ const Shop = () => {
             <TopBar />
             <div className="my-3">
               {getProducts.loading ? (
-                <div className="px-2 lg:px-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-2">
+                <div className="px-2 lg:px-0 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4">
                   <ProductLoadingPage />
                   <ProductLoadingPage />
                   <ProductLoadingPage />
@@ -155,7 +154,7 @@ const Shop = () => {
               ) : (
                 <div>
                   {products.length > 0 ? (
-                    <div className="px-2 lg:px-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-2">
+                    <div className="px-2 lg:px-0 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4">
                       {products.map((product) => (
                         <HomeProductCard key={product._id} product={product} />
                       ))}

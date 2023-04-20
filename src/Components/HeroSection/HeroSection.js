@@ -2,16 +2,15 @@ import React from "react";
 import { heroInformation } from "../../Data/Data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
-import { useSelector } from "react-redux";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./style.css";
 const HeroSection = () => {
-  const brands = useSelector((state) => state.brands.brands);
+  
 
   return (
-    <div>
+    <>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -32,7 +31,7 @@ const HeroSection = () => {
                 <SwiperSlide key={index}>
                   <div
                     style={{ backgroundColor: `${item.bg}` }}
-                    className={`flex flex-row px-9 md:h-[60vh] items-center py-2 md:py-0 `}
+                    className={`flex flex-row px-9 h-fit items-center py-10`}
                   >
                     <div className="basis-[40%]">
                       <img src={item.photo} alt="" className="w-full" />
@@ -77,22 +76,7 @@ const HeroSection = () => {
             })
           : null}
       </Swiper>
-      <div className="flex justify-between items-center my-6 gap-3 px-10 md:px-0">
-        {brands.length > 0
-          ? brands.slice(0, 5).map((brand) => {
-              return (
-                <div key={brand._id}>
-                  <img
-                    src={brand.brandLogo && brand.brandLogo?.url}
-                    alt=""
-                    className="h-8 md:h-12 block ml-auto mr-auto "
-                  />
-                </div>
-              );
-            })
-          : null}
-      </div>
-    </div>
+      </>
   );
 };
 

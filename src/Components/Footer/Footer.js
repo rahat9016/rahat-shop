@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-footBg">
       <div className="max-w-7xl mx-auto pt-12 ">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5  xl:grid-cols-5 text-white gap-1 sm:gap-2 md:gap-4 px-10 sm:px-5 md:px-5 lg:px-2 xl:px-0">
+        <div className="text-white grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 p-2">
           <div>
             <h1 className="text-lg mb-6 tracking-[3px]">SUPPORT</h1>
             <div className="flex items-center gap-2 border border-[rgba(255,255,255,.1)] rounded-full py-2 px-4 hover:border-orange font-fira mb-4">
@@ -63,15 +63,14 @@ const Footer = () => {
           <div>
             <h1 className="tracking-[3px] mb-6">STAY CONNECTED</h1>
             <ul>
-              <li className="mb-2">Star Tech & Engineering Ltd</li>
+              <li className="mb-2">Human Search Tech</li>
               <li className="mb-2 text-textGray">
-                Head Office: 28 Kazi Nazrul Islam <br /> Ave,Navana Zohura
-                Square, Dhaka 1000
+                Head Office: Raipur Lakshmipur <br />Bangladesh
               </li>
               <li>
                 Email: <br />{" "}
                 <span className="text-orange sm:text-sm md:text-sm xl:text-base">
-                  minhajurrohoman9016@gmail.com
+                  minhajurrohoman9016<br/>@gmail.com
                 </span>
               </li>
             </ul>

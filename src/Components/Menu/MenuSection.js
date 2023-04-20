@@ -37,12 +37,12 @@ const MenuSection = ({ home }) => {
     <>
       {home ? (
         <div className="homeMenu">
-          <ul className="z-1">{renderCategory(category)}</ul>
+          <ul className="z-1 ">{renderCategory(category)}</ul>
         </div>
       ) : (
         <div className="w-full bg-white shadow-md z-50	hidden lg:block">
           <div className="allPageMenu max-w-7xl mx-auto">
-            <ul>{renderCategory(category)}</ul>
+            <ul className="">{renderCategory(category)}</ul>
           </div>
         </div>
       )}

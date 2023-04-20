@@ -4,7 +4,6 @@ import HeroSection from "../../Components/HeroSection/HeroSection";
 import Layout from "../../Components/Layout/Layout";
 import MenuSection from "../../Components/Menu/MenuSection";
 import NotFoundProduct from "../../Components/ProductComponent/NotFoundProduct/NotFoundProduct";
-import ProductCard from "../../Components/ProductComponent/ProductCard/ProductCard";
 import ProductLoadingPage from "../../Components/ProductComponent/ProductLoadingPage/ProductLoadingPage";
 import { getAllProductsAction } from "../../redux/action/product.action";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +15,7 @@ const Home = () => {
   const auth = useSelector((state) => state.auth);
   const product = useSelector((state) => state.product);
   const category = useSelector((state) => state.category);
-
+  const brands = useSelector((state) => state.brands.brands);
   useEffect(() => {
     dispatch(getAllProductsAction());
   }, [dispatch]);
@@ -27,15 +26,32 @@ const Home = () => {
   }, [dispatch, auth.authenticate]);
   return (
     <Layout home>
-      <div className="lg:h-[650px] bg-white bg">
+      <div className="bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
-          <div className="md:flex ">
-            <div className="hidden md:block md:w-[25%]">
+          <div className="md:flex">
+            <div className="hidden lg:block md:w-[25%]">
               <MenuSection home />
             </div>
-            <div className="w-full md:w-[75%]">
-              <HeroSection />
+            <div  className="w-full lg:w-[75%]">
+              <div>
+                <HeroSection />
+              </div>
+              <div className="flex justify-between items-center my-6 gap-3 px-10 md:px-0">
+                {brands.length > 0
+                  ? brands.slice(0, 5).map((brand) => {
+                      return (
+                        <div key={brand._id}>
+                          <img
+                            src={brand.brandLogo && brand.brandLogo?.url}
+                            alt=""
+                            className="h-8 md:h-12 block ml-auto mr-auto "
+                          />
+                        </div>
+                      );
+                    })
+                  : null}
+              </div>
             </div>
           </div>
         </div>
@@ -49,7 +65,7 @@ const Home = () => {
           </div>
           <div>
             {product.loading ? (
-              <div className="px-2 sm:px-10 md:px-8 lg:px-4 xl:px-0 grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+              <div className="px-2 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                 <ProductLoadingPage />
                 <ProductLoadingPage />
                 <ProductLoadingPage />
@@ -59,7 +75,7 @@ const Home = () => {
             ) : (
               <div>
                 {product.bestSellingProducts.length > 0 ? (
-                  <div className="px-2 sm:px-10 md:px-8 lg:px-4 xl:px-0 grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                  <div className="px-2 lg:px-0 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                     {product.bestSellingProducts.map((product, index) => (
                       <HomeProductCard key={product._id} product={product} />
                     ))}

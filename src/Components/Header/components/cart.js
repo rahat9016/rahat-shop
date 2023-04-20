@@ -1,18 +1,14 @@
 import React from "react";
-import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
-import { FiSearch } from "react-icons/fi";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
-import Auth from "./auth";
-
-const Cart = ({ home }) => {
+const Cart = () => {
   const navigate = useNavigate();
   const cart = useSelector((state) => state.cart.cartItems);
   return (
-    <div className="flex flex-row-reverse md:flex-row items-center gap-3 ml-8 ">
-      <AiOutlineHeart className="text-2xl text-white cursor-pointer hidden md:block" />
-      <div className={`relative `}>
+    <div className="flex flex-row-reverse lg:flex-row items-center gap-3 ">
+      {/* <AiOutlineHeart className="text-2xl text-white cursor-pointer hidden md:block" /> */}
+      <div className="relative">
         <AiOutlineShoppingCart
           className={`text-2xl text-white cursor-pointer z-50 `}
           onClick={() => navigate("/cart")}
@@ -21,14 +17,7 @@ const Cart = ({ home }) => {
           {cart.length}
         </p>
       </div>
-      <FiSearch
-        className={`text-white font-bold text-2xl ${
-          home ? "md:hidden" : "hidden"
-        }`}
-      />
-      <div className={` hidden md:block`}>
-        <Auth />
-      </div>
+      
     </div>
   );
 };

@@ -53,13 +53,13 @@ const Product = () => {
     <Layout>
       <div>
         <MenuSection />
-        <div className="max-w-7xl mx-auto pt-5 ">
-          <div className="flex flex-col md:flex-row">
+        <div className="max-w-7xl mx-auto p-2">
+          <div className="flex flex-col lg:flex-row items-center py-10">
             {/* Product Images */}
-            <div className=" flex flex-col items-center gap-4 md:w-[40%] ">
+            <div className="flex flex-col items-center gap-4 lg:w-[40%] ">
               <img
                 src={singleProductImage}
-                className="w-96 md:w-full	block ml-auto mr-auto mb-1   "
+                className="w-96 lg:w-full	block ml-auto mr-auto mb-1"
                 alt=""
               />
               <div className="flex flex-row gap-1">
@@ -78,8 +78,8 @@ const Product = () => {
               </div>
             </div>
             {/* Product Information */}
-            <div className="md:w-[60%] px-4 sm:px-4 md:px-4 lg:px-0 mt-6">
-              <h1 className=" text-xl sn:text-2xl md:text-3xl	text-textBlue mb-4 font-plus">
+            <div className="w-full lg:w-[60%] mt-6">
+              <h1 className="text-xl text-textBlue mb-4 font-plus">
                 {product && product.name}
               </h1>
 
@@ -127,8 +127,8 @@ const Product = () => {
                     ))}
                 </ul>
               </div>
-              <div className="">
-                <div className="flex items-center ">
+              <div>
+                <div className="flex items-center">
                   <button
                     className="border border-lightWhite px-3 py-3"
                     onClick={handleDecrement}
@@ -146,11 +146,11 @@ const Product = () => {
                   </button>
                 </div>
                 <div className="flex gap-3 mt-5">
-                  <button className="text-lg bg-orange px-16 py-2  text-white">
+                  <button className="text-lg bg-orange px-6 lg:px-12 xl:px-16  py-2  text-white">
                     Buy Now
                   </button>
                   <button
-                    className="text-lg bg-btnBlue px-16 py-2 text-white"
+                    className="text-lg bg-btnBlue px-6 lg:px-12 xl:px-16  py-2 text-white"
                     onClick={handleCart}
                   >
                     Add to Cart
@@ -164,7 +164,7 @@ const Product = () => {
             </div>
           </div>
         </div>
-        <div className="bg-bgShop ">
+        <div className="bg-bgShop">
           <div className="max-w-7xl mx-auto pb-10">
             <div className="lg:flex  gap-7 mt-11 ">
               <div className="lg:w-[70%] ">
