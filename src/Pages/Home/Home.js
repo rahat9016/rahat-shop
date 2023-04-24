@@ -37,7 +37,7 @@ const Home = () => {
               <div>
                 <HeroSection />
               </div>
-              <div className="flex justify-between items-center my-6 gap-3 px-10 md:px-0">
+              <div className="flex justify-between items-center my-6 gap-3 px-10 md:px-10 lg:px-0">
                 {brands.length > 0
                   ? brands.slice(0, 5).map((brand) => {
                       return (
@@ -57,15 +57,15 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-bgShop pb-20 pt-10 bg ">
+      <div className="bg-bgShop py-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <h1 className="text-3xl font-bold font-fira">Best Selling</h1>
             <p className="font-fira mb-5">Check & Get Your Desired Product!</p>
           </div>
-          <div>
+          <div className="px-2">
             {product.loading ? (
-              <div className="px-2 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+              <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                 <ProductLoadingPage />
                 <ProductLoadingPage />
                 <ProductLoadingPage />
@@ -75,7 +75,7 @@ const Home = () => {
             ) : (
               <div>
                 {product.bestSellingProducts.length > 0 ? (
-                  <div className="px-2 lg:px-0 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                  <div className=" grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                     {product.bestSellingProducts.map((product, index) => (
                       <HomeProductCard key={product._id} product={product} />
                     ))}
@@ -92,7 +92,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="bg-bgShop pb-20 pt-10 bg ">
+      <div className="bg-bgShop pb-20 pt-10 px-2 ">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <h1 className="text-3xl font-bold font-fira">Featured Category</h1>
@@ -106,7 +106,7 @@ const Home = () => {
             ) : (
               <div>
                 {category.category.length > 0 ? (
-                  <div className="px-10 md:px-2 lg:px-0 grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3">
+                  <div className="px-4 md:px-2 lg:px-0 grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-3">
                     {category.category.map((category, index) => {
                       return (
                         <div
@@ -126,7 +126,7 @@ const Home = () => {
                               className="w-14 "
                             />
                           </div>
-                          <h1 className="text-[#01132d] hover:text-orange font-tilt">
+                          <h1 className="text-[#01132d] hover:text-orange font-tilt text-sm md:text-base">
                             {category.title}
                           </h1>
                         </div>
@@ -147,10 +147,9 @@ const Home = () => {
             <h1 className="text-3xl font-bold font-fira">All Products</h1>
             <p className="font-fira mb-5">Check & Get Your Desired Product!</p>
           </div>
-          <div className="">
-            <div className="">
+            <div className="px-2">
               {product.loading ? (
-                <div className="px-2 sm:px-10 md:px-8 lg:px-4 xl:px-0 grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                   <ProductLoadingPage />
                   <ProductLoadingPage />
                   <ProductLoadingPage />
@@ -160,7 +159,7 @@ const Home = () => {
               ) : (
                 <div>
                   {product.products.length > 0 ? (
-                    <div className="px-2 sm:px-10 md:px-8 lg:px-4 xl:px-0 grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                       {product.products.slice(0, 10).map((product, index) => (
                         <HomeProductCard key={product._id} product={product} />
                       ))}
@@ -175,7 +174,6 @@ const Home = () => {
                 </div>
               )}
             </div>
-          </div>
         </div>
       </div>
     </Layout>

@@ -20,21 +20,21 @@ const ProductCard = ({ product }) => {
           <img
             src={productImage[0]}
             alt="Product Img"
-            className="h-[140px] block ml-auto mr-auto mb-auto mt-auto "
+            className="h-[120px] lg:h-[140px] block ml-auto mr-auto mb-auto mt-auto "
           />
         </div>
-        <div className="h-32">
+        <div className="h-16 mb-2">
           <Link
             to={`/product_id?productId=${_id}`}
             className="hover:text-orange text-base font-semibold font-roboto "
           >
-            {name}
+            {name.slice(0,55)}
           </Link>
         </div>
-        <div className="pl-4 h-36">
+        <div className="pl-4 h-24">
           <ul className="list-disc text-primaryLight text-[15px]">
             {keyFeatures &&
-              keyFeatures.slice(0, 3).map((feature) => (
+              keyFeatures.slice(0, 2).map((feature) => (
                 <li key={feature._id} className="text-textGray py-1">
                   {feature.key}
                 </li>

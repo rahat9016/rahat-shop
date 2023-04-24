@@ -55,7 +55,7 @@ const Header = ({ home }) => {
                   <HiOutlineMenuAlt3 className="text-3xl text-white" />
                 )}
               </div>
-              <h1 className="text-white font-bold font-varelo text-2xl hidden lg:block ">Shop By Category</h1 >
+              <h1 className="text-white font-bold font-varelo text-base xl:text-2xl hidden lg:block ">Shop By Category</h1 >
               <img
                 src={Logo}
                 alt="Logo"

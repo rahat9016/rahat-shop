@@ -25,9 +25,9 @@ const SearchProduct = () => {
     <Layout>
       <div className="bg-bgShop pb-20">
         <MenuSection />
-        <div className="max-w-7xl mx-auto w-full mt-5">
+        <div className="max-w-7xl mx-auto w-full mt-5 px-2">
           {loading ? (
-            <div className="px-2 lg:px-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-2">
+            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
               <ProductLoadingPage />
               <ProductLoadingPage />
               <ProductLoadingPage />
@@ -40,7 +40,7 @@ const SearchProduct = () => {
           ) : (
             <div>
               {products.length > 0 ? (
-                <div className="px-2 lg:px-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-2">
+                <div className=" grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                   {products.map((product) => (
                     <ProductCard key={product._id} product={product} />
                   ))}
