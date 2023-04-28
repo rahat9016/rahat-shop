@@ -63,7 +63,7 @@ const Home = () => {
             <h1 className="text-3xl font-bold font-fira">Best Selling</h1>
             <p className="font-fira mb-5">Check & Get Your Desired Product!</p>
           </div>
-          <div className="px-2">
+          <div className="px-3 xl:px-0">
             {product.loading ? (
               <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                 <ProductLoadingPage />
@@ -147,7 +147,7 @@ const Home = () => {
             <h1 className="text-3xl font-bold font-fira">All Products</h1>
             <p className="font-fira mb-5">Check & Get Your Desired Product!</p>
           </div>
-            <div className="px-2">
+            <div className="px-3 xl:px-0">
               {product.loading ? (
                 <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                   <ProductLoadingPage />

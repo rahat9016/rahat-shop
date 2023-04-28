@@ -5,12 +5,14 @@ import Input from "../../Components/Input/Input";
 import Layout from "../../Components/Layout/Layout";
 import MenuSection from "../../Components/Menu/MenuSection";
 import { signing } from "../../redux/action/auth.action";
+import "./style.css"
 const initialValue = {
   email: "",
   password: "",
 };
 const Login = () => {
   const auth = useSelector((state) => state.auth);
+  const errors = auth?.errors;
   const navigate = useNavigate();
   const [values, setValues] = useState(initialValue);
   const dispatch = useDispatch();
@@ -54,22 +56,23 @@ const Login = () => {
                 type="email"
                 name="email"
                 placeholder="E-mail"
-                class="mb-4 p-2 border border-gray rounded-md outline-none focus:border-gray"
+                class=" p-2 border border-gray rounded-md outline-none focus:border-gray"
                 handleChange={handleChange}
               />
-
-              <label className="after:content-['*'] after:ml-0.5 after:text-red-500">
+              <p className={`error `}>{errors?.email?.msg}</p>
+              <label className="after:content-['*'] after:ml-0.5 after:text-red-500 mt-4">
                 Password
               </label>
               <Input
                 type="password"
                 name="password"
                 placeholder="Password"
-                class="mb-6 p-2 border border-gray rounded-md outline-none focus:border-gray"
+                class=" p-2 border border-gray rounded-md outline-none focus:border-gray"
                 handleChange={handleChange}
               />
+              <p className={`error `}>{errors?.password?.msg}</p>
               <button
-                className="w-full bg-btnBlue text-white py-2 rounded-md"
+                className="w-full bg-btnBlue text-white py-2 rounded-md mt-6"
                 type="submit"
               >
                 Login
@@ -79,6 +82,15 @@ const Login = () => {
                   Forgotten Password?
                 </Link>
               </span>
+              <p
+              className={`my-4 text-center p-2 bg-rose-200 text-rose-600 ${
+                 auth?.errors && typeof auth?.errors !== "object"  ? "block" : "hidden"
+              }`}
+            >
+              {/* {auth && auth?.errors} */}{
+                auth?.errors && typeof auth?.errors !== "object"  ? auth?.errors : null
+              }
+            </p>
               <p className="text-center border-b-[1px] border-[#eee] h-[11px]  mb-8">
                 <span className="bg-white px-2 text-textGray">
                   Don't have an account?

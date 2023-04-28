@@ -54,9 +54,9 @@ const Reviews = ({ product }) => {
             <div className="h-[200px] overflow-y-scroll scrollbar-hide">
               {product?.reviews && product?.reviews.length > 0 ? (
                 <div>
-                  {product?.reviews.map((item) => {
+                  {product?.reviews.map((item,index) => {
                     return (
-                      <div className="py-2 ">
+                      <div className="py-2" key={index}>
                         <StarRatings
                           rating={item.star}
                           starDimension="20px"
@@ -72,9 +72,9 @@ const Reviews = ({ product }) => {
                         <p>
                           By{" "}
                           <span className="text-btnBlue font-semibold">
-                            {item?.postedBy.firstName +
+                            {item?.postedBy?.firstName +
                               " " +
-                              item?.postedBy.lastName}
+                              item?.postedBy?.lastName}
                           </span>
                         </p>
                       </div>

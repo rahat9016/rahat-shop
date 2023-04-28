@@ -4,6 +4,8 @@ const initialState = {
   user: null,
   message: "",
   errors: null,
+  notUser: null,
+  wrongPass: null,
   loading: false,
   status: null,
   error: null,
@@ -23,11 +25,14 @@ export const authReducers = (state = initialState, action) => {
         ...state,
         loading: false,
         user: action.payload.user,
+        errors:"",
         message: action.payload.message,
       };
     case Signup.SIGNUP_FAILURE:
       return {
         ...state,
+        message:"",
+        loading:false,
         errors: action.payload.errors,
       };
     case Signing.LOGIN_REQUEST:
@@ -47,7 +52,7 @@ export const authReducers = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        error: action.payload.error,
+        errors: action.payload.errors
       };
     default:
       return state;

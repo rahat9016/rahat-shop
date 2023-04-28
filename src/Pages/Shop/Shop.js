@@ -139,7 +139,7 @@ const Shop = () => {
           </div>
           <div className="w-full lg:w-[80%]">
             <TopBar />
-            <div className="my-3">
+            <div className="my-3 px-3 xl:px-0">
               {getProducts.loading ? (
                 <div className="px-2 lg:px-0 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4">
                   <ProductLoadingPage />

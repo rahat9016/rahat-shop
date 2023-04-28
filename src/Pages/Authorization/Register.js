@@ -108,7 +108,7 @@ const Register = () => {
               className="mt-6 w-full bg-btnBlue text-white py-2 rounded-md"
               type="submit"
             >
-              Continue
+              {auth.loading ? "Loading..." : "Signup"} 
             </button>
             <p
               className={`mt-4 text-center p-2 bg-green-200 text-green-600 ${

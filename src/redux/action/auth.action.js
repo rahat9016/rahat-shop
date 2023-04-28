@@ -1,5 +1,6 @@
 import { Logout, Signing, Signup } from "./constnace";
 import axios from "../../helpers/axios";
+
 export const signing = (user) => {
   return async (dispatch) => {
     dispatch({
@@ -22,12 +23,12 @@ export const signing = (user) => {
         }
       })
       .catch((error) => {
-        console.log({
+        dispatch({
           type: Signing.LOGIN_FAILURE,
           payload: {
-            error: error.response.data,
+            errors: error.response.data.errors,
           },
-        });
+        })
       });
   };
 };

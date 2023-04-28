@@ -25,7 +25,7 @@ const SearchProduct = () => {
     <Layout>
       <div className="bg-bgShop pb-20">
         <MenuSection />
-        <div className="max-w-7xl mx-auto w-full mt-5 px-2">
+        <div className="max-w-7xl mx-auto w-full mt-5 px-3 xl:px-0">
           {loading ? (
             <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
               <ProductLoadingPage />
